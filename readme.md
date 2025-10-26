@@ -1,17 +1,14 @@
 # Autonomy — a Logseq theme
 
-A calm, human-friendly theme inspired by degrowth. Warm paper surfaces, readable serif headings, maroon accents, and moss-green tags.
+A simple theme focused on note taking focus over features. This theme is built on very basic css, so if anybody is curious and have the skills to make it better, please do. 
 
-## Install (dev)
-1. Clone/download this repo.
-2. In Logseq: **Settings → Plugins → Load unpacked plugin**, select the folder.
-3. Switch to **Settings → Themes → Autonomy (Light)**.
+## Install
+
+Until this theme has been made official, I recommend this solution. 
+
+    Add this line to your `custom.css` in Logseq:
+
+    @import url("https://raw.githack.com/larsrose/autonomy-theme/main/theme.css");
 
 ## Design tokens
 All colors and sizes live at the top of `theme.css`. Customize them first; the rest of the CSS reads those variables.
-
-## Roadmap
-- [ ] Dark theme
-- [ ] Callouts/admonitions
-- [ ] Query + right-sidebar polish
-- [ ] Mobile tweaks
