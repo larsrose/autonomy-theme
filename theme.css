@@ -128,7 +128,7 @@ body::after {
   right: 1rem;
   width: 10vw;
   height: 10vw;
-  background: url("https://larsrosengren.com/autonomy-theme/logseqsnail.png")
+  background: url("https://github.com/larsrose/autonomy-theme/logseqsnail.png")
               no-repeat center/contain;
   opacity: 0.8;
   pointer-events: none;
