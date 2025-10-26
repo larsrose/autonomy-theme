@@ -1,0 +1,210 @@
+@import url("https://raw.githubusercontent.com/logseq/logseq/main/resources/css/common.css");
+
+/* =========================================================
+   Autonomy — Logseq Theme (v0.3)
+   ---------------------------------------------------------
+   Calm, human-centred Logseq theme with serif typography,
+   warm maroon accents, moss tags, and soft contrasts.
+   ========================================================= */
+
+/* === 1. Tokens === */
+:root[data-theme="light"] {
+  /* Base surfaces */
+  --auto-paper: #fffdfa;
+  --auto-surface: #f6f3ee;
+  --auto-border: #e7e2d9;
+
+  /* Text */
+  --auto-text: #181a1b;
+  --auto-text-2: #5d635c;
+
+  /* Accents */
+  --auto-accent: #7f2331;
+  --auto-accent-600: #8d2b3a;
+  --auto-moss: #66b032;
+
+  /* Effects */
+  --auto-highlight: rgba(255, 242, 153, 0.6);
+  --auto-radius: 10px;
+  --auto-gap: 0.6em;
+
+  /* Logseq variable overrides */
+  --ls-primary-text-color: var(--auto-text);
+  --ls-secondary-text-color: var(--auto-text-2);
+  --ls-link-text-color: var(--auto-accent);
+  --ls-link-text-hover-color: var(--auto-accent-600);
+  --ls-page-block-bg-color: #ffffff;
+  --ls-tertiary-background-color: var(--auto-surface);
+  --ls-border-color: var(--auto-border);
+
+  /* Type scale */
+  --ls-page-text-size: 1.2rem;
+  --ls-page-title-size: 2.2rem;
+}
+
+:root[data-theme="dark"] {
+  --auto-paper: #1b1d1e;
+  --auto-surface: #202324;
+  --auto-border: #2a2d2e;
+
+  --auto-text: #e8e6e3;
+  --auto-text-2: #a9ada8;
+
+  --auto-accent: #c85364;
+  --auto-accent-600: #d46a78;
+  --auto-moss: #7cc267;
+
+  --auto-highlight: rgba(223, 208, 120, 0.35);
+
+  --ls-primary-text-color: var(--auto-text);
+  --ls-secondary-text-color: var(--auto-text-2);
+  --ls-link-text-color: var(--auto-accent);
+  --ls-link-text-hover-color: var(--auto-accent-600);
+  --ls-page-block-bg-color: #181a1b;
+  --ls-tertiary-background-color: var(--auto-surface);
+  --ls-border-color: var(--auto-border);
+
+  --ls-page-text-size: 1.2rem;
+  --ls-page-title-size: 2.2rem;
+}
+
+/* === 2. Base Typography === */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+body,
+.block-content {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 300;
+  font-size: var(--ls-page-text-size);
+  line-height: 1.6;
+  color: var(--ls-primary-text-color);
+}
+
+.ls-page-title,
+.page-title,
+#journals .journal-title,
+.cp__sidebar-main-content .page-title {
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 600 !important;
+  font-style: normal !important;
+  font-size: var(--ls-page-title-size);
+  letter-spacing: 0.01em;
+  color: var(--ls-primary-text-color);
+}
+
+/* === 3. Journal Headings === */
+#journals .ls-block h1,
+#journals .ls-block h2,
+#journals .ls-block h3,
+#journals .ls-block h4,
+#journals .ls-block h5,
+#journals .ls-block h6 {
+  font-family: 'Playfair Display', serif !important;
+  font-style: italic !important;
+  font-weight: 600 !important;
+  font-size: 1.3rem !important;
+  color: var(--ls-link-text-color) !important;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+#journals .ls-block > .block-children {
+  margin-top: 0.3rem;
+}
+
+/* === 4. Bullets === */
+.ls-bullet {
+  transform: scale(0.85);
+  opacity: 0.6;
+}
+
+/* === 5. Layout & Sidebar === */
+body::after {
+  content: "";
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  width: 10vw;
+  height: 10vw;
+  background: url("https://larsrosengren.com/autonomy-theme/logseqsnail.png")
+              no-repeat center/contain;
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.left-sidebar-inner .nav-content-item.recent,
+.left-sidebar-inner .nav-content-item.is-expand.recent,
+.left-sidebar-inner [class*="nav-content-item"][class*="recent"] {
+  display: none !important;
+}
+
+/* === 6. Tasks & Schedules === */
+.ls-block[data-marker] > .block-content .content,
+.ls-block[data-refs-self*="Schedule"] > .block-children .block-content .content,
+.ls-block[data-refs-self*="tasks"] > .block-children .block-content .content {
+  font-size: 0.85rem !important;
+  line-height: 1.4 !important;
+}
+
+.ls-block .block-content .content .timestamp,
+.ls-block .block-content .content .scheduled,
+.ls-block .block-content .content .deadline {
+  font-size: 0.85rem !important;
+}
+
+/* === 7. Query Blocks === */
+.custom-query,
+.block-content .query,
+.block-content .custom-query {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+}
+
+.custom-query .block-children-container {
+  margin-top: 0.5rem;
+}
+
+.title-text .inline.mr-1 { display: none !important; }
+.title-text { padding-left: 0 !important; margin-left: 0 !important; }
+
+/* === 8. Highlight === */
+:root[data-theme="light"] mark {
+  background: none;
+  box-shadow: inset 0 -0.35em 0 var(--auto-highlight);
+  border-radius: 0.18em;
+  padding: 0 .08em;
+  color: inherit;
+}
+
+:root[data-theme="dark"] mark {
+  background: color-mix(in srgb, #F54927 40%, transparent);
+  color: #fff !important;
+  border-radius: 0.18em;
+  padding: 0 .08em;
+}
+
+/* === 9. Tags === */
+a.tag,
+.page-ref.tag {
+  display: inline-block !important;
+  background: var(--auto-moss, #66b032) !important;
+  color: #fff !important;
+  font-size: 0.85em !important;
+  line-height: 1.2 !important;
+  padding: 0.18em 0.45em !important;
+  border-radius: 0.35em !important;
+  border: none !important;
+  font-weight: 400 !important;
+  transition: filter 0.2s ease;
+}
+a.tag:hover,
+.page-ref.tag:hover {
+  filter: brightness(0.95);
+  text-decoration: none !important;
+}

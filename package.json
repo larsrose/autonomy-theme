@@ -1,0 +1,11 @@
+{
+  "name": "autonomy-theme",
+  "title": "Autonomy Theme",
+  "description": "A calm, human-centred Logseq theme with serif typography and warm, convivial colors.",
+  "version": "0.3.0",
+  "theme": true,
+  "author": "Your Name",
+  "license": "MIT",
+  "css": ["theme.css"],
+  "js": ["custom.js"]
+}
