@@ -1,11 +1,13 @@
 {
-  "name": "autonomy-theme",
+  "name": "logseq-autonomy-theme",
   "title": "Autonomy Theme",
-  "description": "A calm, human-centred Logseq theme with serif typography and warm, convivial colors.",
+  "description": "A calm, human-centred Logseq theme with Playfair Display typography and warm, convivial colors.",
   "version": "0.3.0",
   "theme": true,
   "author": "Your Name",
   "license": "MIT",
+  "repo": "https://github.com/larsrose/autonomy-theme",
+  "icon": "logseqsnail.png",
   "css": ["theme.css"],
   "js": ["custom.js"]
 }
