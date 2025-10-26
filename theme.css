@@ -121,6 +121,8 @@ body,
 }
 
 /* === 5. Layout & Sidebar === */
+
+/* Snail decoration (optional) */
 body::after {
   content: "";
   position: fixed;
@@ -128,17 +130,39 @@ body::after {
   right: 1rem;
   width: 10vw;
   height: 10vw;
-  background: url("https://github.com/larsrose/autonomy-theme/logseqsnail.png")
+  background: url("https://raw.githubusercontent.com/larsrose/autonomy-theme/main/logseqsnail.png")
               no-repeat center/contain;
   opacity: 0.8;
   pointer-events: none;
   z-index: 9999;
 }
 
+/* Hide “Recent” section in left sidebar */
 .left-sidebar-inner .nav-content-item.recent,
 .left-sidebar-inner .nav-content-item.is-expand.recent,
 .left-sidebar-inner [class*="nav-content-item"][class*="recent"] {
   display: none !important;
+}
+
+/* Sidebar font cleanup */
+.left-sidebar-inner,
+.left-sidebar-inner a,
+.left-sidebar-inner .nav-content-item,
+.left-sidebar-inner .favorites,
+.left-sidebar-inner .page-title {
+  font-family: 'Inter', sans-serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  letter-spacing: normal !important;
+  text-rendering: optimizeLegibility;
+  font-size: 0.95rem !important;
+  line-height: 1.4 !important;
+}
+
+/* Align sidebar icons with labels */
+.left-sidebar-inner .nav-content-item .page-icon {
+  vertical-align: middle !important;
+  margin-right: 0.25em;
 }
 
 /* === 6. Tasks & Schedules === */
