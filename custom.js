@@ -1,3 +1,7 @@
+// Safe Logseq custom script bootstrap
+const main = async () => {
+
+
 // Remove leading '#' from rendered tags
 (async () => {
   const stripHash = el => {
@@ -24,3 +28,11 @@
 
   mo.observe(document.body, { childList: true, subtree: true });
 })();
+
+};
+
+if (typeof logseq !== "undefined") {
+  logseq.ready(main).catch(console.error);
+} else {
+  document.addEventListener("logseq:ready", main);
+}
