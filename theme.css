@@ -1,4 +1,7 @@
 @import url("https://raw.githubusercontent.com/logseq/logseq/main/resources/css/common.css");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+
 
 /* =========================================================
    Autonomy — Logseq Theme (v0.3)
@@ -69,7 +72,6 @@
 }
 
 /* === 2. Base Typography === */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap');
 
 body,
 .block-content {
