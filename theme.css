@@ -1,37 +1,28 @@
 @import url("https://raw.githubusercontent.com/logseq/logseq/main/resources/css/common.css");
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Nothing+You+Could+Do&display=swap');
 
 /* =========================================================
-   Autonomy — Logseq Theme (v0.3)
+   Autonomy — Logseq Theme (v0.4)
    ---------------------------------------------------------
-   Calm, human-centred Logseq theme with serif typography,
-   warm maroon accents, moss tags, and soft contrasts.
+   Calm, human-centred Logseq theme with expressive
+   handwritten titles, warm maroon accents, and soft contrasts.
    ========================================================= */
 
 /* === 1. Tokens === */
 :root[data-theme="light"] {
-  /* Base surfaces */
   --auto-paper: #fffdfa;
   --auto-surface: #f6f3ee;
   --auto-border: #e7e2d9;
 
-  /* Text */
-  --auto-text: #181a1b;
-  --auto-text-2: #5d635c;
+  --auto-text: #1a1a1a;
+  --auto-text-2: #5a5f59;
 
-  /* Accents */
   --auto-accent: #7f2331;
   --auto-accent-600: #8d2b3a;
   --auto-moss: #66b032;
 
-  /* Effects */
-  --auto-highlight: rgba(255, 242, 153, 0.6);
-  --auto-radius: 10px;
-  --auto-gap: 0.6em;
+  --auto-highlight: rgba(255, 242, 153, 0.55);
 
-  /* Logseq variable overrides */
   --ls-primary-text-color: var(--auto-text);
   --ls-secondary-text-color: var(--auto-text-2);
   --ls-link-text-color: var(--auto-accent);
@@ -40,24 +31,23 @@
   --ls-tertiary-background-color: var(--auto-surface);
   --ls-border-color: var(--auto-border);
 
-  /* Type scale */
   --ls-page-text-size: 1.2rem;
   --ls-page-title-size: 2.2rem;
 }
 
 :root[data-theme="dark"] {
   --auto-paper: #1b1d1e;
-  --auto-surface: #202324;
-  --auto-border: #2a2d2e;
+  --auto-surface: #222425;
+  --auto-border: #2d3031;
 
-  --auto-text: #e8e6e3;
+  --auto-text: #ece9e5;
   --auto-text-2: #a9ada8;
 
   --auto-accent: #c85364;
   --auto-accent-600: #d46a78;
   --auto-moss: #7cc267;
 
-  --auto-highlight: rgba(223, 208, 120, 0.35);
+  --auto-highlight: rgba(235, 220, 120, 0.35);
 
   --ls-primary-text-color: var(--auto-text);
   --ls-secondary-text-color: var(--auto-text-2);
@@ -78,53 +68,67 @@ body,
   font-family: 'Inter', sans-serif !important;
   font-weight: 300;
   font-size: var(--ls-page-text-size);
-  line-height: 1.6;
+  line-height: 1.65;
   color: var(--ls-primary-text-color);
+  text-rendering: optimizeLegibility;
 }
 
+/* === 3. Page Titles & Headings === */
 .ls-page-title,
 .page-title,
 #journals .journal-title,
 .cp__sidebar-main-content .page-title {
-  font-family: 'Playfair Display', serif !important;
+  font-family: 'Nothing You Could Do', cursive !important;
   font-weight: 600 !important;
-  font-style: normal !important;
   font-size: var(--ls-page-title-size);
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
   color: var(--ls-primary-text-color);
 }
 
-/* === 3. Journal Headings === */
+/* H1–H6 hierarchy */
+.ls-block h1,
+.ls-block h2,
+.ls-block h3,
+.ls-block h4,
+.ls-block h5,
+.ls-block h6 {
+  font-family: 'Nothing You Could Do', cursive !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em;
+  color: var(--ls-primary-text-color);
+  -webkit-font-smoothing: antialiased;
+}
+
+.ls-block h1 { font-size: 2.3rem !important; line-height: 1.25; }
+.ls-block h2 { font-size: 2.0rem !important; line-height: 1.3; }
+.ls-block h3 { font-size: 1.6rem !important; font-style: italic !important; color: var(--ls-link-text-color) !important; }
+.ls-block h4,
+.ls-block h5,
+.ls-block h6 {
+  font-size: 1.2rem !important;
+  font-style: italic !important;
+  color: var(--ls-secondary-text-color) !important;
+}
+
+/* === 4. Journal Headings === */
 #journals .ls-block h1,
 #journals .ls-block h2,
 #journals .ls-block h3,
 #journals .ls-block h4,
 #journals .ls-block h5,
 #journals .ls-block h6 {
-  font-family: 'Playfair Display', serif !important;
-  font-style: italic !important;
+  font-family: 'Nothing You Could Do', cursive !important;
   font-weight: 600 !important;
-  font-size: 1.3rem !important;
-  color: var(--ls-link-text-color) !important;
+  font-style: italic !important;
   letter-spacing: 0.02em;
-  line-height: 1.4;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+  color: var(--ls-link-text-color) !important;
 }
 
-#journals .ls-block > .block-children {
-  margin-top: 0.3rem;
-}
+/* === 5. Sidebar & Layout === */
 
-/* === 4. Bullets === */
-.ls-bullet {
-  transform: scale(0.85);
-  opacity: 0.6;
-}
-
-/* === 5. Layout & Sidebar === */
-
-/* Snail decoration (optional) */
+/* Snail decoration */
 body::after {
   content: "";
   position: fixed;
@@ -139,83 +143,46 @@ body::after {
   z-index: 9999;
 }
 
-/* Hide “Recent” section in left sidebar */
+/* Hide “Recent” section */
 .left-sidebar-inner .nav-content-item.recent,
 .left-sidebar-inner .nav-content-item.is-expand.recent,
 .left-sidebar-inner [class*="nav-content-item"][class*="recent"] {
   display: none !important;
 }
 
-/* Sidebar font cleanup */
+/* Sidebar text consistency */
 .left-sidebar-inner,
 .left-sidebar-inner a,
 .left-sidebar-inner .nav-content-item,
 .left-sidebar-inner .favorites,
 .left-sidebar-inner .page-title {
   font-family: 'Inter', sans-serif !important;
-  font-style: normal !important;
   font-weight: 400 !important;
-  letter-spacing: normal !important;
-  text-rendering: optimizeLegibility;
   font-size: 0.95rem !important;
   line-height: 1.4 !important;
+  color: var(--ls-secondary-text-color);
 }
 
-/* Align sidebar icons with labels */
-.left-sidebar-inner .nav-content-item .page-icon {
-  vertical-align: middle !important;
-  margin-right: 0.25em;
+/* === 6. Tasks, Queries, Highlights === */
+.ls-block[data-marker] > .block-content .content {
+  font-size: 0.9rem !important;
+  line-height: 1.45 !important;
 }
 
-/* === 6. Tasks & Schedules === */
-.ls-block[data-marker] > .block-content .content,
-.ls-block[data-refs-self*="Schedule"] > .block-children .block-content .content,
-.ls-block[data-refs-self*="tasks"] > .block-children .block-content .content {
-  font-size: 0.85rem !important;
-  line-height: 1.4 !important;
-}
-
-.ls-block .block-content .content .timestamp,
-.ls-block .block-content .content .scheduled,
-.ls-block .block-content .content .deadline {
-  font-size: 0.85rem !important;
-}
-
-/* === 7. Query Blocks === */
-.custom-query,
-.block-content .query,
-.block-content .custom-query {
-  background: none !important;
-  border: none !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  padding: 0 !important;
-}
-
-.custom-query .block-children-container {
-  margin-top: 0.5rem;
-}
-
-.title-text .inline.mr-1 { display: none !important; }
-.title-text { padding-left: 0 !important; margin-left: 0 !important; }
-
-/* === 8. Highlight === */
 :root[data-theme="light"] mark {
   background: none;
   box-shadow: inset 0 -0.35em 0 var(--auto-highlight);
   border-radius: 0.18em;
-  padding: 0 .08em;
   color: inherit;
 }
 
 :root[data-theme="dark"] mark {
-  background: color-mix(in srgb, #F54927 40%, transparent);
+  background: color-mix(in srgb, #F54927 35%, transparent);
   color: #fff !important;
   border-radius: 0.18em;
-  padding: 0 .08em;
 }
 
-/* === 9. Tags === */
+/* === 7. Tags === */
 a.tag,
 .page-ref.tag {
   display: inline-block !important;
@@ -233,4 +200,19 @@ a.tag:hover,
 .page-ref.tag:hover {
   filter: brightness(0.95);
   text-decoration: none !important;
+}
+
+/* === 8. Graph View Typography === */
+.graph-container text {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 0.9rem !important;
+  fill: var(--ls-secondary-text-color, #555) !important;
+  opacity: 0.9;
+}
+.graph-container circle.main {
+  fill: var(--ls-link-text-color, #8d2b3a) !important;
+}
+.graph-container circle {
+  fill: var(--auto-moss, #66b032) !important;
 }
